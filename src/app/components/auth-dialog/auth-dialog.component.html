@@ -1,0 +1,33 @@
+<mat-dialog-content>
+  <div class="flex flex-column w-full h-full gap-2 container">
+    <span class="title">{{ isRegistration ? 'Regisztráció' : 'Bejelentkezés' }}</span>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="flex flex-column">
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" />
+          <mat-error *ngIf="authForm.get('email')?.hasError('required')">Az email cím megadása kötelező</mat-error>
+          <mat-error *ngIf="authForm.get('email')?.hasError('email')">Érvénytelen email formátum</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput type="password" placeholder="Jelszó" formControlName="password" />
+          <mat-error *ngIf="authForm.get('password')?.hasError('required')">A jelszó megadása kötelező</mat-error>
+          <mat-error *ngIf="authForm.get('password')?.hasError('minlength')">A jelszó legalább 6 karakter hosszú kell legyen</mat-error>
+        </mat-form-field>
+      </div>
+    
+      <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+  
+      <div class="flex gap-2 buttons">
+        <button mat-raised-button color="primary" type="submit">
+          {{ isRegistration ? 'Regisztráció' : 'Bejelentkezés' }}
+        </button>
+      
+        <button mat-raised-button color="accent" type="button" (click)="toggleRegistration()">
+          {{ isRegistration ? 'Bejelentkezésre váltás' : 'Regisztrációra váltás' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+

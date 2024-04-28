@@ -1,0 +1,24 @@
+<div mat-dialog-content class="flex flex-column align-items-center justify-content-center w-full h-full container">
+  <div mat-dialog-subtitle class="py-2">
+      <span class="dialog-title">Editing Post</span>
+  </div>
+  <form *ngIf="postData" class="flex flex-column align-items-center justify-content-center gap-3 py-3 w-full" [formGroup]="editForm" (ngSubmit)="editPost()">
+      <div class="flex flex-column justify-content-center align-items-center gap-2 w-full">
+          <mat-form-field>
+              <mat-label for="title">Title</mat-label>
+              <input id="title" formControlName="title" matInput type="text" required [(ngModel)]="postData.title">
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label for="location">City</mat-label>
+              <input id="location" formControlName="location" matInput type="text" [(ngModel)]="postData.location">
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label for="description">Description</mat-label>
+              <textarea id="description" formControlName="description" matInput type="text" [(ngModel)]="postData.description"></textarea>
+          </mat-form-field>
+      </div>
+      <button class="w-4" mat-flat-button matButton color="accent" type="submit">Editing</button>
+  </form>
+</div>
+
+

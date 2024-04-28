@@ -1,0 +1,38 @@
+<div class="flex flex-column w-full container">
+    <mat-card class="flex flex-column gap-4 w-11 card">
+        <mat-card-header class="flex align-items-center justify-content-start w-full">
+          <div class="flex gap-1">
+            <div mat-card-avatar class="pi pi-heart-fill"></div>
+            <div class="flex flex-column gap-1">
+              <mat-card-title>
+                <span>{{ post.title }}</span>
+              </mat-card-title>
+              <mat-card-subtitle>
+                <span>{{ post.date | date }}</span>
+              </mat-card-subtitle>
+            </div>
+          </div>
+          <div class="flex icon">
+            <div *ngIf="user && user.email === 'admin@admin.com'">
+              <i class="pi pi-times-circle" (click)="onDeletePost(post)"></i>
+            </div>
+            <div *ngIf="user && user.uid === post.userId && user.email != 'admin@admin.com'" class="flex gap-3">
+              <i class="pi pi-times-circle" (click)="onDeletePost(post)"></i>
+              <i class="pi pi-file-edit" (click)="onEditPost(post)"></i>
+            </div>
+          </div>
+        </mat-card-header>
+        <div>
+            <img mat-card-image class="max-w-full w-full">
+            <app-image-slider [images]="images"></app-image-slider>
+        </div>
+        <mat-card-content>
+          <p>
+            {{ post.description }}
+          </p>
+          <span>Helyszín: {{ post.location }}</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

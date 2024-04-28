@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+$basic-grey: #424242;
+$primary-purple: #7b1fa2;
+$accent-green: #63daa2;
+$background-grey: #212529;
+
+.container {
+    flex-direction: row;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;    
+    color: white;
+    letter-spacing: 0.15rem;
+    line-height: 1.25;
+
+    .block {
+        width: 58.3333%;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .form {
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+.title {
+    min-height: 5vh;
+    font-size: 2rem;
+    padding: 0;
+    text-align: center;
+}
+
+app-post {
+    margin-bottom: 2rem;
+}
+
+.phone {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .block {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.auth {
+    border: solid 0.125rem $accent-green;
+    background-color: $basic-grey;
+    border-radius: 1.5rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}

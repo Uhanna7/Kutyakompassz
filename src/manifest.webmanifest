@@ -1,0 +1,23 @@
+{
+  "name": "kutyakompassz",
+  "short_name": "kutyakompassz",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "./kutyakompassz",
+  "start_url": "./kutyakompassz",
+  "assets": [
+    "assets/kutya1.jpg",
+    "assets/kutya2.jpg",
+    "assets/kutya3.jpg",
+    "assets/kutya4.jpg",
+    "assets/kutya5.jpg",
+    "assets/kutya6.jpg",
+    "assets/kutya7.png",
+    "assets/kutya8.jpg",
+    "assets/kutya9.jpg",
+    "assets/kutya10.jpg",
+    "assets/logo.png",
+    "assets/paw-solid.svg"
+  ]
+}

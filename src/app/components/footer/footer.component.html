@@ -1,0 +1,22 @@
+<div class="flex flex-column align-content-center align-items-center justify-content-evenly w-full h-full container">
+    <div class="flex flex-nowrap align-items-center justify-content-between first">
+        <div class="flex gap-5 left" [ngClass]="{'phone': isPhonePortrait}">
+            <span class="title" [ngClass]="{'phone': isPhonePortrait}">KUTYAKOMPASSZ</span>
+        </div>
+        <div class="flex gap-5 center" [ngClass]="{'phone': isPhonePortrait}">
+            <span>Uri Hanna</span>
+        </div>
+        <div class="flex gap-5 right" [ngClass]="{'phone': isPhonePortrait}">
+            <span>2023</span>
+        </div>
+    </div>
+    <div class="block line"></div>
+    <div class="flex flex-nowrap align-items-center justify-content-between second">
+        <div class="left" [ngClass]="{'phone': isPhonePortrait}">
+            <span>Szeged</span>
+        </div>
+        <div class="right" [ngClass]="{'phone': isPhonePortrait}">
+            <button mat-raised-button color="accent" (click)="openAuthDialog()">ADMIN</button>
+        </div>
+    </div>
+</div>

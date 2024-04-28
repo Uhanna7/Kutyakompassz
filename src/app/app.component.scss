@@ -1,0 +1,30 @@
+$basic-grey: #424242;
+$primary-purple: #7b1fa2;
+$accent-green: #63daa2;
+$background-grey: #212529;
+
+.app {
+    background-color: black;
+    position: relative;
+}
+
+.header {
+    height: 7.5vh;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-phone {
+    height: 35vh;
+}
+
+.content {
+    min-height: 72.5vh;
+}
+
+.footer {
+    height: 20vh;
+    background-color: $background-grey;
+}

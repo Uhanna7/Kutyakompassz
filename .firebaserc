@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kutyakompassz-a5417": {
+      "hosting": {
+        "kutyakompassz": [
+          "kutyakompassz-a5417"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kutyakompassz-a5417"
+  }
+}

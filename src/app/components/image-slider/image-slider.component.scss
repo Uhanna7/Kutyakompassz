@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+$basic-grey: #424242;
+$primary-purple: #7b1fa2;
+$accent-green: #63daa2;
+$background-grey: #212529;
+
+
+.slider {
+    position: relative;
+    width: 60vw;
+    height: 45vh;
+    overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider.is-phone-portrait {
+    width: 100vw;
+    height: 17.5vh;
+    margin-left: 0.5rem;
+}
+
+.content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif !important;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.15rem;
+    line-height: 1.25;
+    padding: 2rem;
+    opacity: 70%;
+}
+
+.pi {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 70%;
+
+    .pi-chevron-right {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.paginator {
+    font-family: 'Montserrat', sans-serif !important;
+    color: white;
+    opacity: 70%;
+}
+
+.arrow {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;;
+    padding: 0.75rem;
+    margin: 0.25rem;
+}
+
+a:hover {
+    background-color: #d4cdcd;
+}
+
+.phone {
+    .text {
+       padding: 1rem;
+    }
+}

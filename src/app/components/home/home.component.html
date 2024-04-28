@@ -1,0 +1,38 @@
+<div class="flex flex-column gap-5 w-full h-full max-w-full container">
+    <div class="flex flex-column gap-5 content">
+        <div class="flex justify-content-center align-items-center w-full max-w-full top" [ngClass]="{'phone': isPhonePortrait}">
+            <div class="flex flex-column gap-5 desc">
+                <span class="flex justify-content-center align-items-center title">RÓLUNK</span>
+                <div class="text">
+                    <p class="description">
+                        A KUTYAKOMPASSZ célja a gazdiktól elveszett és kóbor kutyusok sorsának igazgatása.
+                        Célunk, hogy kevesebb kutya legyen az utcán és ezáltal egy boldogabb kutyás társadalom jöjjön létre.
+                        Ez a platform a különböző online terektől eltérően célzottan biztosítja a kutyusokról szóló posztok és bejegyzések létrehozását,
+                        hogy ezáltal a kutyás emberek könnyebben tudjanak segíteni a bajba jutott kutyusokon, vagy épp megtalálni a gazdájukat.
+                    </p>
+                </div>
+            </div>
+            <div class="flex max-w-max justify-content-center align-items-center image">
+                <img src="../../assets/kutya2.jpg">
+            </div>
+        </div>
+        <div class="flex justify-content-center align-items-center w-full max-w-full bottom" [ngClass]="{'phone': isPhonePortrait}">
+            <div class="flex max-w-max justify-content-center map">
+                <img src="../../assets/kutya1.jpg">
+            </div>
+            <div class="flex flex-column gap-5 help">
+                <span class="flex justify-content-center align-items-center title"><i class="pi pi-question-circle"></i>SÚGÓ</span>
+                <div class="text" *ngFor="let item of help; let i = index">
+                    <div class="help-block">
+                        <i
+                            class="pi"
+                            [ngClass]="item.open ? 'pi-chevron-circle-up' : 'pi-chevron-circle-down'"
+                            (click)="openRes(i)"></i>
+                        <span class="question">{{ item.question }}</span>
+                        <p class="response" *ngIf="item.open">{{ item.response }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+$basic-grey: #424242;
+$primary-purple: #7b1fa2;
+$accent-green: #63daa2;
+$background-grey: #212529;
+
+.content {
+    font-family: 'Montserrat', sans-serif;    
+    color: white;
+    letter-spacing: 0.15rem;
+    line-height: 1.25;
+    padding: 2rem;
+}
+
+.image, .map {
+    overflow: hidden;
+    height: 40rem;
+    width: 41.6667%;
+    gap: 2rem;
+}
+
+.desc, .help {
+    width: 58.3333%;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+    border: solid $accent-green 0.125rem;
+    background-color: $basic-grey;
+}
+
+.pi {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.description {
+    padding: 4rem;
+    text-align: center;
+}
+
+.response {
+    padding: 1rem;
+}
+
+.ng-image-slider {
+    width: 100%;
+}
+
+.help-block {
+    padding: 0.5rem;
+}
+
+.top, .bottom {
+    gap: 2rem;
+}
+
+.phone {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .text {
+        font-size: 1.25rem;
+    }
+
+    .response {
+        font-size: 1rem;
+    }
+
+    .desc, .image, .map, .help{
+        width: 95%;
+        height: auto;
+
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}

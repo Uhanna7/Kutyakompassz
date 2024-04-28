@@ -1,0 +1,60 @@
+<div class="flex flex-column w-full h-full justify-content-center align-items-center container">
+    <div class="w-11 justify-content-center align-items-center form">
+        <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="postForm">
+                <ng-template matStepLabel>Adj címet a bejegyzésnek</ng-template>
+                <form [formGroup]="postForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label name="title">Cím</mat-label>
+                        <input matInput formControlName="title" autocomplete="off" placeholder="Bejegyzés címe">
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Következő</button>
+                    </div>
+              </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Adj leírást a bejegyzésnek</ng-template>
+                <form [formGroup]="postForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label name="description">Leírás</mat-label>
+                        <input matInput formControlName="description" type="text" autocomplete="off" placeholder="Bejegyzés tartalma">
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Következő</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Hol láttad/vesztetted el a kutyát?</ng-template>
+                <form [formGroup]="postForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label name="location">Hely</mat-label>
+                        <input matInput formControlName="location" type="text" autocomplete="off" placeholder="Bejegyzés tartalma">
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Következő</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Tölts fel képeket</ng-template>
+                <form [formGroup]="postForm">
+                    <form [formGroup]="imageForm">
+                        <input type="file" name="images" (change)="onFileSelected($event)" multiple>
+                    </form>
+                    <div>
+                        <button mat-button matStepperNext>Következő</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>KÉSZ</ng-template>
+              <div class="flex gap-4">
+                <button mat-raised-button color="primary" matStepperPrevious>Vissza</button>
+                <button mat-raised-button color="accent" (click)="onSubmit()">Feltöltés</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+    </div>
+</div>

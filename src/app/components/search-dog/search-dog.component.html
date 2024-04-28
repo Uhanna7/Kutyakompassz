@@ -1,0 +1,28 @@
+<div class="flex w-full h-full gap-5 container" [ngClass]="{'phone': isPhonePortrait}">
+    <div class="flex flex-column h-full w-full lg:w-5 form">
+        <div *ngIf="user" class="flex flex-column w-full justify-content-center align-content-center overflow-hidden">
+            <div class="flex justify-content-center align-items-start title">
+                <span>ELVESZETT A KUTYÁM</span>
+            </div>
+            <div class="flex justify-content-center align-items-center w-full">
+                <app-form [type]="type"></app-form>
+            </div>
+        </div>
+        <div *ngIf="!user" class="flex flex-column justify-content-start align-items-center gap-5 w-full h-full">
+            <div class="flex justify-content-center w-8 title">Posztolni csak bejelentkezett felhasználók tudnak!</div>
+            <div class="flex justify-content-center align-items-center w-7 h-10rem auth">
+                <button mat-raised-button color="accent" (click)="openAuthDialog()">Bejelentkezés/Regisztráció</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-column align-items-center h-auto block">
+        <div *ngFor="let post of posts" class="w-full h-full flex justify-content-center">
+            <div class="flex flex-column justify-content-center w-11 h-auto max-h-full gap-5 overflow-auto posts">
+                <app-post (deletePost)="onPostDeleted($event)" [post]="post"></app-post>            
+            </div>
+        </div>
+        <div *ngIf="posts.length == 0">
+            <span class="title">NINCS MEGJELENÍTHETŐ POSZT!</span>
+        </div>
+    </div>
+</div>
