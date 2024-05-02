@@ -1,7 +1,7 @@
 <div class="flex justify-content-center align-items-center w-full h-full container" [ngClass]="{'phone': isPhonePortrait}">
-    <div class="flex flex-wrap justify-content-center align-items-center slider w-10" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
-        <div class="w-full" *ngFor="let image of images; let i = index" class="slide" [ngClass]="{ 'active': i === currentIndex }">
-            <img class="w-full h-full z-1" *ngIf="i === currentIndex" [src]="image">
+    <div class="flex flex-wrap justify-content-center align-items-center w-full md:w-10 slider" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
+        <div class="w-full slide" *ngFor="let image of images; let i = index" [ngClass]="{ 'active': i === currentIndex} ">
+            <img class="w-full z-1" *ngIf="i === currentIndex" [src]="image" [ngClass]="{'phone-image': isPhonePortrait}">
         </div>
         <div class="w-full h-full absolute z-5 content">
             <div class="flex flex-column justify-content-around w-full h-full relative up">

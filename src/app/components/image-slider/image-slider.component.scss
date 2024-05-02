@@ -8,20 +8,19 @@ $background-grey: #212529;
 
 .slider {
     position: relative;
-    width: 60vw;
-    height: 60vh;
     overflow: hidden;
 }
 
 img {
   object-fit: cover;
   object-position: center;
+  height: 35rem;
 }
 
-.slider.is-phone-portrait {
-    width: 100vw;
-    height: 40vh;
-    margin-left: 0.5rem;
+.phone-image {
+    height: 25rem;
+    object-fit: cover;
+    object-position: center;
 }
 
 .content {
