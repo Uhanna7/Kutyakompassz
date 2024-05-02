@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { DatabaseService } from 'src/app/services/db.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,10 +11,12 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnDestroy {
   @Input() type!: string;
   postForm: FormGroup;
   imageForm: FormGroup;
+
+  destroyed$ = new Subject<void>();
 
   images: any[] = [];
   user: any;
@@ -41,6 +44,11 @@ export class FormComponent implements OnInit {
     this.afAuth.authState.subscribe((user) => {
       this.user = user;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   onFileSelected(event: any) {

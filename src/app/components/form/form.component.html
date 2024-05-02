@@ -1,5 +1,5 @@
 <div class="flex flex-column w-full h-full justify-content-center align-items-center container">
-    <div class="w-11 justify-content-center align-items-center form">
+    <div class="w-full justify-content-center align-items-center mx-auto form">
         <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
             <mat-step [stepControl]="postForm">
                 <ng-template matStepLabel>Adj címet a bejegyzésnek</ng-template>
@@ -26,7 +26,7 @@
                 </form>
             </mat-step>
             <mat-step>
-                <ng-template matStepLabel>Hol láttad/vesztetted el a kutyát?</ng-template>
+                <ng-template class="flex flex-wrap" matStepLabel>Add meg a helyszínt</ng-template>
                 <form [formGroup]="postForm">
                     <mat-form-field appearance="fill">
                         <mat-label name="location">Hely</mat-label>

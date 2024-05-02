@@ -8,21 +8,10 @@ $background-grey: #212529;
 .container {
     flex-direction: row;
     position: relative;
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Montserrat', sans-serif;
     color: white;
     letter-spacing: 0.15rem;
     line-height: 1.25;
-
-    .block {
-        width: 58.3333%;
-        justify-content: start;
-        align-items: start;
-    }
-
-    .form {
-        justify-content: start;
-        align-items: center;
-    }
 }
 
 .title {
@@ -63,18 +52,6 @@ app-post {
 @media only screen and (max-width: 850px) {
     .container {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .block {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .form {
-        width: 100%;
         justify-content: center;
         align-items: center;
     }

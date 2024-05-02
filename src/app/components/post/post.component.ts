@@ -1,17 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DatabaseService } from 'src/app/services/db.service';
 import { Post } from 'src/app/models/post.model';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { EditpostComponent } from '../editpost/editpost.component';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnDestroy {
   @Input() post: Post = {
     id: '',
     title: '',
@@ -22,6 +23,8 @@ export class PostComponent implements OnInit {
     userId: '',
     images: [],
   };
+
+  destroyed$ = new Subject<void>();
 
   @Output() deletePost: EventEmitter<Post>;
 
@@ -55,6 +58,11 @@ export class PostComponent implements OnInit {
     });
 
     this.images = this.post.images;
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   onDeletePost(post: Post) {

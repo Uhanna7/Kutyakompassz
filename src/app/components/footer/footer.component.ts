@@ -1,15 +1,18 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
   isPhonePortrait = false;
+
+  destroyed$ = new Subject<void>();
 
   constructor(
     private responsive: BreakpointObserver,
@@ -24,6 +27,11 @@ export class FooterComponent implements OnInit {
         this.isPhonePortrait = true;
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   openAuthDialog() {

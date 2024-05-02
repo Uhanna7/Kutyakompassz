@@ -1,14 +1,17 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   open: boolean = false;
   isPhonePortrait = false;
+
+  destroyed$ = new Subject<void>();
 
   help: {question: string, response: string, open: boolean}[] =
     [
@@ -33,7 +36,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-
   ngOnInit() {
     this.responsive.observe(Breakpoints.HandsetPortrait).subscribe((result) => {
       this.isPhonePortrait = false;
@@ -42,6 +44,11 @@ export class HomeComponent implements OnInit {
         this.isPhonePortrait = true;
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   openRes(index: number) {

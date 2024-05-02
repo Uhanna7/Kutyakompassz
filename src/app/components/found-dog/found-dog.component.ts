@@ -1,21 +1,24 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { Post } from 'src/app/models/post.model';
 import { DatabaseService } from 'src/app/services/db.service';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-found-dog',
   templateUrl: './found-dog.component.html',
   styleUrls: ['./found-dog.component.scss'],
 })
-export class FoundDogComponent implements OnInit {
+export class FoundDogComponent implements OnInit, OnDestroy {
   isAdmin = false;
   isPhonePortrait = false;
   posts: Post[] = [];
   type = 'found';
+
+  destroyed$ = new Subject<void>();
 
   user: any;
 
@@ -43,6 +46,11 @@ export class FoundDogComponent implements OnInit {
     });
 
     this.loadPosts();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 
   onPostDeleted(post: Post) {
