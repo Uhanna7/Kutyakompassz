@@ -9,15 +9,10 @@ $background-grey: #212529;
 }
 
 .header {
-    height: 7.5vh;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     z-index: 100;
-}
-
-.header-phone {
-    height: 35vh;
 }
 
 .content {

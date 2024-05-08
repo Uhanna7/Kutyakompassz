@@ -46,6 +46,7 @@ import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.compon
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthService } from './services/auth.service';
 import { EditpostComponent } from './components/editpost/editpost.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { EditpostComponent } from './components/editpost/editpost.component';
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

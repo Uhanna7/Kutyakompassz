@@ -28,7 +28,7 @@ $background-grey: #212529;
     justify-content: flex-start;
     gap: 1rem;
 
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Montserrat', sans-serif;
     color: white;
     font-weight: 700;
 
@@ -36,7 +36,7 @@ $background-grey: #212529;
         width: 10%;
         height: auto;
     }
-    
+
     .logo.phone {
         width: 50%;
         height: auto;
@@ -47,3 +47,6 @@ $background-grey: #212529;
     background-color: rgb(66,66,66, 0.5);
 }
 
+.phone {
+  cursor: pointer;
+}
