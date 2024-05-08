@@ -47,6 +47,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthService } from './services/auth.service';
 import { EditpostComponent } from './components/editpost/editpost.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ToUpperCasePipe } from './pipes/to-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ImageSliderComponent,
     AuthDialogComponent,
     EditpostComponent,
+    ToUpperCasePipe
   ],
   imports: [
     BrowserModule,

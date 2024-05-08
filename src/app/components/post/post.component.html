@@ -30,7 +30,7 @@
           <p>
             {{ post.description }}
           </p>
-          <span>Helyszín: {{ post.location }}</span>
+          <span>Helyszín: {{ post.location | toUpperCase }}</span>
         </mat-card-content>
     </mat-card>
 </div>
