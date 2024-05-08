@@ -46,7 +46,6 @@ import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.compon
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthService } from './services/auth.service';
 import { EditpostComponent } from './components/editpost/editpost.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToUpperCasePipe } from './pipes/to-uppercase.pipe';
 
 @NgModule({
@@ -89,7 +88,6 @@ import { ToUpperCasePipe } from './pipes/to-uppercase.pipe';
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
-    FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
